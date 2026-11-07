@@ -17,7 +17,7 @@ enabled = false
 [vars]
 # Only needed if the frontend is hosted on a different origin (e.g. Cloudflare Pages).
 # Comma-separated, e.g. "https://vibescan.pages.dev". Leave empty for same-origin.
-ALLOWED_ORIGINS = ""
+ALLOWED_ORIGINS = "https://vibescan.dailydosebykaran77.workers.dev"
 AI_PROVIDER = "workersai"
 AI_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 
