@@ -1,0 +1,28 @@
+# One Worker serves both the API (/api/*) and the static frontend (../frontend).
+name = "vibescan"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "../frontend"
+binding = "ASSETS"
+
+[ai]
+binding = "AI"
+
+# Keep Worker logs off so profile text can never end up in them.
+[observability]
+enabled = false
+
+[vars]
+# Only needed if the frontend is hosted on a different origin (e.g. Cloudflare Pages).
+# Comma-separated, e.g. "https://vibescan.pages.dev". Leave empty for same-origin.
+ALLOWED_ORIGINS = ""
+AI_PROVIDER = "workersai"
+AI_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+
+# Optional edge rate limiting. Enable after reading README > "Rate limiting".
+# [[ratelimits]]
+# name = "RATE_LIMITER"
+# namespace_id = "1001"
+# simple = { limit = 10, period = 60 }

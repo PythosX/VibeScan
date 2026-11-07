@@ -1,0 +1,15 @@
+{
+  "name": "vibescan-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test test/validate.test.js test/worker.test.js",
+    "test:bios": "node scripts/run-bios.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

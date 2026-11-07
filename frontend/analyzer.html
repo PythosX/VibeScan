@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F7F3">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/icons/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <title>New analysis — VibeScan</title>
+  <link rel="stylesheet" href="css/analyzer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="analyzer" data-age-gate>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="VibeScan home"><img src="assets/icons/mark.svg" alt="" width="28" height="28">VibeScan</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html" data-nav-new>New analysis</a>
+        <a class="privacy-pill" href="index.html#privacy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>Private: not stored</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container-narrow workspace">
+    <div id="inputView">
+      <h1>Let’s understand the vibe.</h1>
+      <p class="lede">Paste a dating bio or upload a screenshot to get a contextual breakdown.</p>
+
+      <div class="tabs" role="tablist" aria-label="Input method">
+        <button class="tab" role="tab" id="tab-paste" type="button" aria-selected="true" aria-controls="panel-paste">Paste text</button>
+        <button class="tab" role="tab" id="tab-upload" type="button" aria-selected="false" aria-controls="panel-upload" tabindex="-1">Upload screenshot</button>
+      </div>
+
+      <section role="tabpanel" id="panel-paste" aria-labelledby="tab-paste" class="panel">
+        <label for="bio">Profile text</label>
+        <p class="hint" id="bio-hint">Remove names, handles and contact details first. Only the text below is analysed.</p>
+        <textarea class="textarea" id="bio" rows="10" aria-describedby="bio-hint bio-count bio-error" placeholder="Paste a dating bio here…" autocomplete="off" spellcheck="true"></textarea>
+        <div class="field-meta">
+          <span id="bio-count" class="counter" aria-live="polite"><span id="count">0</span> / 3,000 characters</span>
+          <span class="field-tools">
+            <button class="btn btn-quiet" type="button" id="example">Use example profile</button>
+            <button class="btn btn-quiet" type="button" id="clear">Clear</button>
+          </span>
+        </div>
+        <p class="hint" id="example-note" hidden>This is made-up sample text, not a real person. Analysing it still runs the real AI.</p>
+        <div class="notice" id="ocr-notice" role="status" hidden>Text read from your screenshot. Check it and fix any mistakes before analysing.</div>
+        <div class="error" id="bio-error" role="alert" hidden></div>
+      </section>
+
+      <section role="tabpanel" id="panel-upload" aria-labelledby="tab-upload" class="panel" hidden>
+        <div id="drop-zone-wrap">
+          <label class="dropzone" id="dropzone" for="file">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 19V6M9 10l5-5 5 5M5 19v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg>
+            <span class="dz-title">Drag a screenshot here, or <span class="dz-link">browse files</span></span>
+            <span class="hint">JPG, PNG or WEBP, up to 5 MB</span>
+          </label>
+          <input class="sr-only" type="file" id="file" accept="image/jpeg,image/png,image/webp">
+        </div>
+        <div id="preview-wrap" hidden>
+          <img id="preview-img" alt="Preview of the uploaded screenshot" class="shot">
+          <p class="small muted" id="file-name"></p>
+          <div class="field-tools">
+            <button class="btn btn-primary" type="button" id="extract">Extract text</button>
+            <button class="btn btn-secondary" type="button" id="remove">Remove image</button>
+          </div>
+          <div class="ocr-progress" id="ocr-progress" hidden>
+            <label for="ocr-bar" id="ocr-label">Reading text in your browser…</label>
+            <progress id="ocr-bar" max="100" value="0"></progress>
+          </div>
+        </div>
+        <p class="hint hint-top">Text is read inside your browser with Tesseract.js. Your image isn’t uploaded anywhere. The first run downloads the English language data (about 2 MB). You’ll be able to edit the result before analysing.</p>
+        <div class="error" id="file-error" role="alert" hidden></div>
+      </section>
+
+      <div class="actions">
+        <button class="btn btn-primary btn-wide" type="button" id="analyse">Analyse profile</button>
+      </div>
+      <p class="privacy-note">Your profile analysis is temporary. We don’t save uploaded profiles by default. Text is processed by Cloudflare Workers AI. <a href="index.html#privacy">How we handle privacy</a></p>
+    </div>
+
+    <div id="progressView" hidden>
+      <h1 id="progress-title" tabindex="-1">Analysing the profile</h1>
+      <p class="lede">This usually takes under a minute. Stages update as the AI actually writes each part.</p>
+      <div class="bar" id="bar" role="progressbar" aria-label="Analysis progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><span id="bar-fill"></span></div>
+      <ol class="stages" id="stages">
+        <li data-stage="1"><span class="stage-name">Reading profile</span><span class="stage-state">Waiting</span></li>
+        <li data-stage="2"><span class="stage-name">Understanding context</span><span class="stage-state">Waiting</span></li>
+        <li data-stage="3"><span class="stage-name">Identifying language patterns</span><span class="stage-state">Waiting</span></li>
+        <li data-stage="4"><span class="stage-name">Preparing explanations</span><span class="stage-state">Waiting</span></li>
+        <li data-stage="5"><span class="stage-name">Generating results</span><span class="stage-state">Waiting</span></li>
+      </ol>
+      <button class="btn btn-secondary" type="button" id="cancel">Cancel</button>
+    </div>
+  </main>
+
+  <dialog class="dialog" id="age-gate" aria-labelledby="age-title">
+    <div id="age-ask">
+      <h2 id="age-title">Before you start</h2>
+      <p>VibeScan is for adults. Please confirm you are 18 or older. We don’t ask for ID and we don’t store your answer on a server.</p>
+      <div class="actions">
+        <button class="btn btn-primary" type="button" id="age-yes">I’m 18 or older</button>
+        <button class="btn btn-secondary" type="button" id="age-no">I’m under 18</button>
+      </div>
+    </div>
+    <div id="age-denied" hidden>
+      <h2>VibeScan is for adults</h2>
+      <p>You need to be 18 or older to use this tool.</p>
+      <div class="actions"><a class="btn btn-primary" href="index.html">Back to home</a></div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/analyzer.js"></script>
+</body>
+</html>

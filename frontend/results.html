@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F7F3">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/icons/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <title>Analysis results — VibeScan</title>
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="results">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="VibeScan home"><img src="assets/icons/mark.svg" alt="" width="28" height="28">VibeScan</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html" data-nav-new>New analysis</a>
+        <a class="privacy-pill" href="index.html#privacy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>Private: not stored</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div id="empty" class="empty container-narrow" hidden>
+      <h1 id="empty-title" tabindex="-1">No analysis here</h1>
+      <p class="lede" id="empty-text">Results are kept only in this browser tab, so there’s nothing to show yet.</p>
+      <a class="btn btn-primary" href="analyzer.html">Start an analysis</a>
+    </div>
+
+    <div id="report" hidden>
+      <div class="report-head">
+        <div>
+          <h1 id="report-title" tabindex="-1">Your analysis</h1>
+          <p class="muted small" id="report-meta"></p>
+        </div>
+        <div class="toolbar" role="group" aria-label="Report actions">
+          <a class="btn btn-primary btn-sm" href="analyzer.html" id="again">Analyse another profile</a>
+          <button class="btn btn-secondary btn-sm" type="button" id="copy-report">Copy report</button>
+          <button class="btn btn-secondary btn-sm" type="button" id="copy-questions">Copy suggested questions</button>
+          <button class="btn btn-quiet btn-sm" type="button" id="clear-analysis">Clear analysis</button>
+        </div>
+      </div>
+      <div class="notice" id="dropped-note" hidden></div>
+
+      <div class="report-grid">
+        <div class="report-main" id="report-main"></div>
+        <div class="scrim" id="scrim" hidden></div>
+        <aside class="detail" id="detail" aria-label="Phrase explanation" tabindex="-1"></aside>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/results.js"></script>
+</body>
+</html>

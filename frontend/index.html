@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VibeScan — Read between the vibes</title>
+  <meta name="description" content="VibeScan helps adults understand dating profile language: positive signals, ambiguous phrases and explicit red flags, explained in context.">
+  <meta name="theme-color" content="#F8F7F3">
+  <link rel="icon" href="assets/icons/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="landing">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="VibeScan home"><img src="assets/icons/mark.svg" alt="" width="28" height="28">VibeScan</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#privacy">Privacy</a>
+        <a class="btn btn-primary btn-sm" href="analyzer.html">Start analysing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">AI-POWERED DATING PROFILE INTELLIGENCE</p>
+        <h1 id="hero-title">Not every vibe is what it seems.</h1>
+        <p class="lede">Understand dating profiles beyond the words. Discover positive signals, questionable patterns and hidden meanings with AI-powered analysis.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="analyzer.html">Analyse a Profile</a>
+          <a class="btn btn-secondary" href="#how">See How It Works</a>
+        </div>
+      </div>
+
+      <figure class="preview" aria-label="Example VibeScan analysis. Illustration only, not a real profile.">
+        <div class="preview-bar">
+          <span class="preview-title">Profile analysis</span>
+          <span class="preview-note">Example, not a real profile</span>
+        </div>
+        <div class="preview-body">
+          <div class="preview-bio">
+            <p class="panel-label">Bio</p>
+            <p class="bio-text">Designer, weekend climber, bad at small talk. Looking for something real. <span class="hl" data-kind="ambiguous" role="button" tabindex="0" aria-pressed="true" data-preview="pv-nodrama">No drama</span>, just good coffee and honest conversation. I <span class="hl" data-kind="ambiguous" role="button" tabindex="0" aria-pressed="false" data-preview="pv-chase">don’t chase</span>, but I’ll always plan the first date. <span class="hl" data-kind="positive" role="button" tabindex="0" aria-pressed="false" data-preview="pv-book">Tell me about the last book that changed your mind.</span></p>
+            <ul class="legend" aria-label="Legend">
+              <li><span class="tag" data-kind="positive">Positive</span></li>
+              <li><span class="tag" data-kind="ambiguous">Ambiguous</span></li>
+              <li><span class="tag" data-kind="concerning">Concerning</span></li>
+            </ul>
+          </div>
+          <div class="preview-panel" aria-live="polite">
+            <article id="pv-nodrama" data-kind="ambiguous">
+              <span class="tag" data-kind="ambiguous">Ambiguous</span>
+              <h3>“No drama”</h3>
+              <p>Often a preference for calm, direct communication.</p>
+              <h4>Another reading</h4>
+              <p>It can also signal discomfort with hard conversations, depending on what surrounds it. Here, “honest conversation” points to the first reading.</p>
+              <h4>Worth asking</h4>
+              <p class="q">“What does a good disagreement look like for you?”</p>
+            </article>
+            <article id="pv-chase" data-kind="ambiguous" hidden>
+              <span class="tag" data-kind="ambiguous">Ambiguous</span>
+              <h3>“don’t chase”</h3>
+              <p>Commonly means wanting mutual interest rather than persistence.</p>
+              <h4>Another reading</h4>
+              <p>It can read as guarded or reluctant to take initiative. The next clause, planning the first date, shows initiative.</p>
+              <h4>Worth asking</h4>
+              <p class="q">“How do you like to show interest early on?”</p>
+            </article>
+            <article id="pv-book" data-kind="positive" hidden>
+              <span class="tag" data-kind="positive">Positive</span>
+              <h3>“Tell me about the last book…”</h3>
+              <p>An open invitation to share, and a sign of curiosity about the other person’s mind.</p>
+              <h4>Why it matters</h4>
+              <p>Questions that invite a story tend to start two-way conversations.</p>
+              <h4>Worth asking</h4>
+              <p class="q">“What was the last thing that changed your mind?”</p>
+            </article>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section class="section container" id="how" aria-labelledby="how-title">
+      <h2 id="how-title" class="reveal">How VibeScan works</h2>
+      <ol class="steps reveal">
+        <li><h3>Add the text</h3><p>Paste a bio, or upload a screenshot. Text in screenshots is read inside your browser.</p></li>
+        <li><h3>Check what was read</h3><p>Edit anything the scanner got wrong, and remove names or contact details before you continue.</p></li>
+        <li><h3>Analyse in context</h3><p>An AI model reads each phrase alongside the sentences around it, then explains what it may mean.</p></li>
+        <li><h3>Explore and ask</h3><p>Open any highlighted phrase, compare readings, and copy the questions you want to ask.</p></li>
+      </ol>
+    </section>
+
+    <section class="section container" id="features" aria-labelledby="features-title">
+      <h2 id="features-title" class="reveal">Understand more than just the words.</h2>
+      <dl class="feature-list reveal">
+        <div><dt>Phrase-by-phrase interpretation</dt><dd>Every highlighted phrase opens a plain-language explanation, grounded in the text around it.</dd></div>
+        <div><dt>Three kinds of signal</dt><dd>Positive, ambiguous and explicitly concerning language, each marked with a symbol and a label, not just a colour.</dd></div>
+        <div><dt>Alternative readings</dt><dd>Ambiguous phrases come with a second reasonable interpretation, so you don’t jump to conclusions.</dd></div>
+        <div><dt>Questions worth asking</dt><dd>Five respectful questions that help clarify intentions. Copy one or all of them.</dd></div>
+        <div><dt>Screenshot reading</dt><dd>Text recognition runs in your browser. You review and edit the text before anything is analysed.</dd></div>
+        <div><dt>No score, no verdict</dt><dd>VibeScan describes language. It never rates a person or claims to know their intentions.</dd></div>
+      </dl>
+    </section>
+
+    <section class="section container" aria-labelledby="example-title">
+      <div class="example reveal">
+        <div>
+          <h2 id="example-title">An example of the analysis</h2>
+          <p class="muted">Illustration of the format, using a made-up bio. Real results come from the AI model and are based only on the text you provide.</p>
+        </div>
+        <div class="example-table" role="table" aria-label="Example language signals">
+          <div class="example-row example-head" role="row"><span role="columnheader">Phrase</span><span role="columnheader">Signal</span><span role="columnheader">In context</span></div>
+          <div class="example-row" role="row"><span role="cell" class="quote">“I value honesty”</span><span role="cell"><span class="tag" data-kind="positive">Positive</span></span><span role="cell">States a value that is easy to act on and discuss.</span></div>
+          <div class="example-row" role="row"><span role="cell" class="quote">“Traditional values”</span><span role="cell"><span class="tag" data-kind="ambiguous">Ambiguous</span></span><span role="cell">Means different things to different people. Ask what it means to them.</span></div>
+          <div class="example-row" role="row"><span role="cell" class="quote">“You won’t question me”</span><span role="cell"><span class="tag" data-kind="concerning">Concerning</span></span><span role="cell">Explicitly rejects a partner’s voice, whatever the intent behind it.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container split" id="about" aria-labelledby="context-title">
+      <div class="reveal">
+        <h2 id="context-title">Why context matters</h2>
+        <p class="lede">A phrase is rarely good or bad on its own. VibeScan reads sentences, not keywords.</p>
+      </div>
+      <div class="context-list reveal">
+        <div><h3>“No drama”</h3><p>A preference for calm conversation, or a way of dismissing feelings. The words around it decide which.</p></div>
+        <div><h3>“Alpha”</h3><p>Confidence and identity for some people, entitlement for others. Never a verdict by itself.</p></div>
+        <div><h3>“Sapiosexual”</h3><p>Attraction to intelligence. A description, not a warning sign.</p></div>
+        <p class="muted small">Cultural vocabulary and unconventional preferences are not red flags. VibeScan is built to say so.</p>
+      </div>
+    </section>
+
+    <section class="section container split" id="privacy" aria-labelledby="privacy-title">
+      <div class="reveal">
+        <h2 id="privacy-title">Privacy first</h2>
+        <p class="lede">Your profile analysis is temporary. We don’t save uploaded profiles by default.</p>
+      </div>
+      <ul class="privacy-list reveal">
+        <li><strong>No account, no database.</strong> Nothing is stored on our servers after the analysis finishes.</li>
+        <li><strong>Screenshots stay on your device.</strong> Text is recognised in your browser. Only the text you approve is sent for analysis.</li>
+        <li><strong>One AI provider, disclosed.</strong> Text is processed by Cloudflare Workers AI using Meta’s Llama 3.3 model.</li>
+        <li><strong>Your results live in one tab.</strong> The report is kept in this browser tab’s session storage so you can read it. Clear it any time, or close the tab.</li>
+        <li><strong>No analytics on profile text.</strong> Profile contents are never logged or sent to analytics.</li>
+      </ul>
+    </section>
+
+    <section class="section container" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <div class="faq">
+        <details><summary>Does VibeScan tell me if someone is toxic?</summary><p>No. It interprets language and suggests questions. It can’t know a person’s intentions or character, and it won’t score or diagnose anyone.</p></details>
+        <details><summary>Is it accurate?</summary><p>It’s an AI model, so it can misread tone, slang or humour. Treat results as a starting point for your own judgement and for asking questions.</p></details>
+        <details><summary>Are my screenshots uploaded?</summary><p>No. Text is extracted in your browser. The image never leaves your device; the extracted text is only sent after you choose to analyse it.</p></details>
+        <details><summary>Which platforms does it work with?</summary><p>Any. VibeScan doesn’t connect to dating apps or scrape them. You supply the text yourself.</p></details>
+        <details><summary>Is it free?</summary><p>Yes. It runs on a free AI allowance, which has a daily limit. If the limit is reached you’ll see a clear message and can try again later.</p></details>
+        <details><summary>Who is it for?</summary><p>Adults aged 18 and over. You’ll be asked to confirm your age before first use.</p></details>
+      </div>
+    </section>
+
+    <section class="section container final-cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">Ready to read between the vibes?</h2>
+      <p class="muted">Paste a bio and get a structured breakdown in under a minute.</p>
+      <a class="btn btn-primary" href="analyzer.html">Analyse a Profile</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="logo" href="index.html"><img src="assets/icons/mark.svg" alt="" width="28" height="28">VibeScan</a><p class="tagline">Read between the vibes.</p></div>
+        <div><h2>Explore</h2><ul><li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div><h2>Product</h2><ul><li><a href="analyzer.html">Analyse a profile</a></li><li><a href="#about">About</a></li><li><a href="#privacy">Privacy</a></li></ul></div>
+      </div>
+      <p class="footer-base">VibeScan is an independent tool for adults aged 18+. It is not affiliated with any dating platform. An AI analysis is only a starting point.</p>
+    </div>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

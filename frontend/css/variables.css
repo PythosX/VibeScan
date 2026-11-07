@@ -1,0 +1,36 @@
+:root {
+  /* Colour: brief palette. --text-2 is a slightly darker grey than #777B77 so body copy passes AA (4.5:1). */
+  --bg: #F8F7F3;
+  --surface: #FFFFFF;
+  --text: #202321;
+  --text-2: #5F635F;
+  --sage: #718675;
+  --sage-ink: #4A5E4E;
+  --lavender: #EAE7F2;
+  --lavender-ink: #4B4566;
+  --border: #E8E6E0;
+  --border-strong: #D3D0C7;
+
+  /* Semantic: background + readable ink */
+  --pos: #DCEADF;   --pos-ink: #2D5A3A;
+  --amb: #F5E9CB;   --amb-ink: #6F5200;
+  --con: #F2DEDB;   --con-ink: #8A2F27;
+
+  /* Type */
+  --font-head: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+
+  /* 8px spacing system */
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 40px;
+  --s6: 48px; --s8: 64px; --s10: 80px; --s12: 96px;
+
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px;
+
+  /* Motion */
+  --t-hover: 180ms; --t-btn: 140ms; --t-page: 300ms; --t-section: 420ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --container: 1120px;
+  --measure: 66ch;
+}
